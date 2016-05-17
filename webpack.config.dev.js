@@ -34,7 +34,7 @@ export default {
       {test: /\.svg(\?v=\d+.\d+.\d+)?$/, loader: 'file-loader?limit=10000&mimetype=image/svg+xml'},
       {test: /\.(jpe?g|png|gif)$/i, loaders: ['file']},
       {test: /\.ico$/, loader: 'file-loader?name=[name].[ext]'},
-      {test: /(\.css|\.scss)$/, loaders: ['style', 'css?sourceMap', 'sass?sourceMap']}
+      {test: /(\.css|\.less)$/, loaders: ['style', 'css?sourceMap', 'less?sourceMap']}
     ]
   }
 };
