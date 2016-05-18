@@ -1,0 +1,43 @@
+.component-Button {
+    display: block;
+    width: 200px;
+    border: 1px solid grey;
+    cursor: pointer;
+    background: white;
+    padding: 5px 10px;
+    margin: 5px;
+
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* IE/Edge */
+    user-select: none;
+
+    &.enabled:hover {
+      background: #eee;
+    }
+
+    &.enabled:active {
+      background: #ddd;
+    }
+
+    &.disabled {
+      cursor: inherit;
+      //background: #eee;
+      border-color: #ddd;
+      color: #ddd;
+    }
+
+    .button-tooltip {
+      position: absolute;
+      color: black;
+      background: #eee;
+      display: block;
+      border: 1px solid #ddd;
+      width: 213px;
+      top: 35px;
+      left: -1px;
+    }
+}
