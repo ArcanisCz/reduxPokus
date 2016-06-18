@@ -9,7 +9,7 @@ const Button = (props) => {
 };
 
 Button.propTypes = {
-    name: React.PropTypes.number.isRequired
+    name: React.PropTypes.number
 };
 
 export default Button;
