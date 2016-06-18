@@ -1,19 +1,19 @@
 import React from 'react';
 
-const Table = (props) => {
+const Table = ({rows, cols}) => {
     return (
         <table>
             <thead>
             <tr>
-                {props.cols.map((col) =>
+                {cols.map((col) =>
                     <th style={{width: col.width}} key={col.name}>{col.label}</th>
                 )}
             </tr>
             </thead>
             <tbody>
-            {props.rows.map((row) =>
+            {rows.map((row) =>
                 <tr key={row.id}>
-                    {props.cols.map((col) =>
+                    {cols.map((col) =>
                         <td style={{width: col.width}} key={col.name}>{row[col.name]}</td>
                     )}
                 </tr>
