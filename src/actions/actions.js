@@ -1,5 +1,11 @@
-import {REFRESH_TABLE} from "./actionTypes";
+import * as ActionTypes from "./actionTypes";
 
 export const refreshTable = () => ({
-    type: REFRESH_TABLE
+    type: ActionTypes.REFRESH_TABLE
+});
+
+export const addRow = (name, surname) => ({
+    type: ActionTypes.ADD_ROW,
+    name: name,
+    surname: surname
 });

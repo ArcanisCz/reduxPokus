@@ -9,4 +9,13 @@ describe('Actions', () => {
         };
         expect(ActionCreators.refreshTable()).to.deep.equal(expected);
     });
+
+    it("should create a add row action", () => {
+        const expected = {
+            type: ActionTypes.ADD_ROW,
+            name: "Ddd",
+            surname: "ddd"
+        };
+        expect(ActionCreators.addRow("Ddd", "ddd")).to.deep.equal(expected);
+    });
 });
