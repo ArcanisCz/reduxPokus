@@ -1,9 +1,9 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import {expect} from 'chai';
-import Table from './Table';
+import TableContainer from './TableContainer';
 
-describe('<Table />', () => {
+describe('<TableContainer />', () => {
     //it('should be a \'table\'', () => {
     //    const wrapper = shallow(<Table />);
     //    const actual = wrapper.find('table');

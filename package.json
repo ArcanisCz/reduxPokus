@@ -16,7 +16,8 @@
     "prebuild": "npm run clean-dist && npm run build:html && npm run lint && npm run test",
     "build": "babel-node tools/build.js && npm run open:dist",
     "test": "mocha tools/testSetup.js \"src/**/*.spec.js\" --reporter progress",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- tools/testSetup.js \"src/**/*.spec.js\""
   },
   "author": "Cory House",
   "license": "MIT",
@@ -54,9 +55,10 @@
     "eslint-watch": "2.1.11",
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.8.5",
+    "istanbul": "1.0.0-alpha.2",
     "less": "2.7.1",
     "less-loader": "2.2.3",
-    "mocha": "2.4.5",
+    "mocha": "2.5.3",
     "npm-run-all": "1.8.0",
     "react-addons-test-utils": "15.0.2",
     "redux-immutable-state-invariant": "1.2.3",
