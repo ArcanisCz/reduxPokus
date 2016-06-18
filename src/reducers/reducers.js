@@ -27,16 +27,28 @@ export default (state = initialState, action) => {
                     id: 1,
                     name: "Aaa",
                     surname: "aaa"
-                },{
+                }, {
                     id: 2,
                     name: "Bbb",
                     surname: "bbb"
-                },{
+                }, {
                     id: 3,
                     name: "Ccc",
                     surname: "ccc"
                 }]
             });
+        case ActionTypes.ADD_ROW:{
+            const a = Object.assign({}, state);
+            a.rows = state.rows.map((row) => Object.assign({}, row));
+            a.cols = state.cols.map((col) => Object.assign({}, col));
+            const max = state.rows.reduce((memo, row) => Math.max(row.id, memo), 0);
+            a.rows.push({
+                id: max + 1,
+                name: action.name,
+                surname: action.surname
+            });
+            return a;
+        }
         default:
             return state;
     }

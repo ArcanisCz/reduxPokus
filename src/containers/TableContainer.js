@@ -1,5 +1,16 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import Table from '../components/mynew/Table';
+import * as Actions from "../actions/actions";
+
+const TableContainer = ({rows, cols, onClick}) => {
+    return (
+        <div>
+            <button onClick={() => onClick()}>Aaa</button>
+            <Table rows={rows} cols={cols}/>
+        </div>
+    );
+};
 
 const mapStateToProps = (state) => {
     return {
@@ -8,11 +19,13 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = () => {
-    return {};
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onClick: () => dispatch(Actions.addRow("a", "b"))
+    };
 };
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Table);
+)(TableContainer);

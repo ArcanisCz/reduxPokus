@@ -15,7 +15,6 @@ const store = configureStore();
 
 store.dispatch(Actions.refreshTable());
 
-
 render(
     <Provider store={store}>
         <Router history={browserHistory} routes={routes}/>
