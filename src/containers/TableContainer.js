@@ -12,6 +12,12 @@ const TableContainer = ({rows, cols, onClick}) => {
     );
 };
 
+TableContainer.propTypes = {
+    cols: React.PropTypes.array.isRequired,
+    rows: React.PropTypes.array.isRequired,
+    onClick: React.PropTypes.func
+};
+
 const mapStateToProps = (state) => {
     return {
         rows: state.rows,
