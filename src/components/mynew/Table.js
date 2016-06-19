@@ -1,7 +1,7 @@
 import React from 'react';
 import { List } from "immutable";
 
-const Table = ({cols=List(), rows=List()}) => {
+const Table = ({cols=List(), rows=List(), selected=null, onSelect}) => {
     return (
         <table>
             <thead>
@@ -13,7 +13,7 @@ const Table = ({cols=List(), rows=List()}) => {
             </thead>
             <tbody>
             {rows.map((row) =>
-                <tr key={row.get("id")}>
+                <tr key={row.get("id")} onClick={onSelect.bind(this, row.get("id"))} className={selected==row.get("id") ? "selected" : ""}>
                     {cols.map((col) =>
                         <td style={{width: col.get("width")}} key={col.get("name")}>{row.get(col.get("name"))}</td>
                     )}
@@ -26,7 +26,9 @@ const Table = ({cols=List(), rows=List()}) => {
 
 Table.propTypes = {
     cols: React.PropTypes.instanceOf(List),
-    rows: React.PropTypes.instanceOf(List)
+    rows: React.PropTypes.instanceOf(List),
+    selected: React.PropTypes.number,
+    onSelect: React.PropTypes.func
 };
 
 export default Table;

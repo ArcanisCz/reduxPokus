@@ -6,6 +6,11 @@ export const refreshTable = () => ({
 
 export const addRow = (name, surname) => ({
     type: ActionTypes.ADD_ROW,
-    name: name,
-    surname: surname
+    name,
+    surname
+});
+
+export const selectRow = (id) => ({
+    type: ActionTypes.SELECT_ROW,
+    id
 });

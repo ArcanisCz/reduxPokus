@@ -18,4 +18,12 @@ describe('Actions', () => {
         };
         expect(ActionCreators.addRow("Ddd", "ddd")).to.deep.equal(expected);
     });
+
+    it("should create a select row action", () => {
+        const expected = {
+            type: ActionTypes.SELECT_ROW,
+            id: 2
+        };
+        expect(ActionCreators.selectRow(2)).to.deep.equal(expected);
+    });
 });

@@ -41,7 +41,7 @@ const rows = (state = List(), action) => {
             })]);
         case ActionTypes.ADD_ROW:
         {
-            const max = state.reduce((memo, row) => Math.max(row.id, memo), 0);
+            const max = state.reduce((memo, row) => Math.max(row.get("id"), memo), 0);
             return state.push(Map({
                 id: max + 1,
                 name: action.name,
@@ -53,7 +53,19 @@ const rows = (state = List(), action) => {
     }
 };
 
+const selected = (state = null, action) => {
+    switch (action.type) {
+        case ActionTypes.REFRESH_TABLE:
+            return null;
+        case ActionTypes.SELECT_ROW:
+            return action.id;
+        default:
+            return state;
+    }
+};
+
 export default combineReducers({
     rows,
-    cols
+    cols,
+    selected
 });
