@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Table from '../components/mynew/Table';
 import * as Actions from "../actions/actions";
+import { List } from "immutable";
 
 const TableContainer = ({rows, cols, onClick}) => {
     return (
@@ -13,8 +14,8 @@ const TableContainer = ({rows, cols, onClick}) => {
 };
 
 TableContainer.propTypes = {
-    cols: React.PropTypes.array.isRequired,
-    rows: React.PropTypes.array.isRequired,
+    cols: React.PropTypes.instanceOf(List).isRequired,
+    rows: React.PropTypes.instanceOf(List).isRequired,
     onClick: React.PropTypes.func
 };
 

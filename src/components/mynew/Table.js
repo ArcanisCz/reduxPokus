@@ -1,20 +1,21 @@
 import React from 'react';
+import { List } from "immutable";
 
-const Table = ({rows, cols}) => {
+const Table = ({cols=List(), rows=List()}) => {
     return (
         <table>
             <thead>
             <tr>
                 {cols.map((col) =>
-                    <th style={{width: col.width}} key={col.name}>{col.label}</th>
+                    <th style={{width: col.get("width")}} key={col.get("name")}>{col.get("label")}</th>
                 )}
             </tr>
             </thead>
             <tbody>
             {rows.map((row) =>
-                <tr key={row.id}>
+                <tr key={row.get("id")}>
                     {cols.map((col) =>
-                        <td style={{width: col.width}} key={col.name}>{row[col.name]}</td>
+                        <td style={{width: col.get("width")}} key={col.get("name")}>{row.get(col.get("name"))}</td>
                     )}
                 </tr>
             )}
@@ -24,12 +25,8 @@ const Table = ({rows, cols}) => {
 };
 
 Table.propTypes = {
-    cols: React.PropTypes.arrayOf(React.PropTypes.shape({
-        name: React.PropTypes.string.isRequired,
-        label: React.PropTypes.string.isRequired,
-        width: React.PropTypes.number.isRequired
-    })),
-    rows: React.PropTypes.array
+    cols: React.PropTypes.instanceOf(List),
+    rows: React.PropTypes.instanceOf(List)
 };
 
 export default Table;
