@@ -58,7 +58,7 @@ const selected = (state = null, action) => {
         case ActionTypes.REFRESH_TABLE:
             return null;
         case ActionTypes.SELECT_ROW:
-            return action.id;
+            return action.id ? action.id : null;
         default:
             return state;
     }

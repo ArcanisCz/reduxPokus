@@ -1,14 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Table from '../components/mynew/Table';
+import Detail from '../components/mynew/Detail';
 import * as Actions from "../actions/actions";
 import { List } from "immutable";
 
 const TableContainer = ({rows, cols, onClick, selectRow, selected}) => {
     return (
         <div>
-            <button onClick={() => onClick()}>Aaa</button>
-            <Table rows={rows} cols={cols} onSelect={selectRow} selected={selected}/>
+            <section id="left">
+                <button onClick={() => onClick()}>Aaa</button>
+                <Table rows={rows} cols={cols} onSelect={selectRow} selected={selected}/>
+            </section>
+            <section id="right">
+                <Detail rows={rows} cols={cols} selected={selected}/>
+            </section>
         </div>
     );
 };
