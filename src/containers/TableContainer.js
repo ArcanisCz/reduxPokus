@@ -23,7 +23,7 @@ TableContainer.propTypes = {
     cols: React.PropTypes.instanceOf(List).isRequired,
     rows: React.PropTypes.instanceOf(List).isRequired,
     onClick: React.PropTypes.func,
-    onSelect: React.PropTypes.func,
+    selectRow: React.PropTypes.func,
     selected: React.PropTypes.number
 };
 
