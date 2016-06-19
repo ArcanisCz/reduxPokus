@@ -13,7 +13,7 @@ const Table = ({cols=List(), rows=List(), selected=null, onSelect}) => {
             </thead>
             <tbody>
             {rows.map((row) =>
-                <tr key={row.get("id")} onClick={onSelect.bind(this, row.get("id"))} className={selected==row.get("id") ? "selected" : ""}>
+                <tr key={row.get("id")} onClick={onSelect.bind(this, row.get("id"))} aria-selected={selected==row.get("id")}>
                     {cols.map((col) =>
                         <td style={{width: col.get("width")}} key={col.get("name")}>{row.get(col.get("name"))}</td>
                     )}
